@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://dww5qkw00u85"]
+
+[ext_resource type="Texture2D" uid="uid://b83i6bawe3uif" path="res://kaitlin_test/pokemonahhpaint.png" id="1_lrnik"]
+[ext_resource type="PackedScene" uid="uid://cj2aw5sr7fw7r" path="res://kaitlin_test/player.tscn" id="2_bstvq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryfl4"]
+size = Vector2(561, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecuxx"]
+size = Vector2(269, 458)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwe2v"]
+size = Vector2(936, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw5rn"]
+size = Vector2(17, 282)
+
+[node name="Test" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(626, 669)
+texture = ExtResource("1_lrnik")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(547, -23)
+shape = SubResource("RectangleShape2D_ryfl4")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(148, 178)
+shape = SubResource("RectangleShape2D_ecuxx")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(962, 128)
+shape = SubResource("RectangleShape2D_ecuxx")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(946, 226)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(144.5, 219)
+shape = SubResource("RectangleShape2D_ecuxx")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(598, 602.5)
+shape = SubResource("RectangleShape2D_wwe2v")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(151, 508)
+shape = SubResource("RectangleShape2D_dw5rn")
+
+[node name="player" parent="." instance=ExtResource("2_bstvq")]
+position = Vector2(436, 267)
+scale = Vector2(4, 4)

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj2aw5sr7fw7r"]
+
+[ext_resource type="Script" path="res://kaitlin_test/player.gd" id="1_tkl7r"]
+[ext_resource type="Texture2D" uid="uid://dl2cdjma3m477" path="res://kaitlin_test/personahh.png" id="2_i0ir8"]
+[ext_resource type="Texture2D" uid="uid://bcd82xve6736u" path="res://kaitlin_test/personahhh.png" id="3_kpkrv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8a1ho"]
+size = Vector2(18, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmusf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i0ir8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kpkrv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_tkl7r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 3)
+shape = SubResource("RectangleShape2D_8a1ho")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kmusf")
+frame_progress = 0.0131906
