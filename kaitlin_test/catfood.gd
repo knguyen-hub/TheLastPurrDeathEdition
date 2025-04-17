@@ -11,6 +11,8 @@ func _process(delta: float) -> void:
 	
 	var player_coords = player.global_position
 	if global_position.distance_to(player_coords) < 100:
+		if Input.is_action_pressed('select'):
+			hide()
 		play('hover')
 	else:
 		play('default')
