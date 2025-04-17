@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwkkc77sbi3fp"]
+
+[ext_resource type="Texture2D" uid="uid://bm32a5848hrul" path="res://assets or images/studio apartment.png" id="1_2k0dn"]
+[ext_resource type="PackedScene" uid="uid://qq2mtw13lbp8" path="res://elaine - memory 1/player.tscn" id="2_nboim"]
+
+[node name="memory 1 - root note" type="Node2D"]
+
+[node name="studio apartment" type="TextureRect" parent="."]
+offset_left = 242.0
+offset_right = 888.0
+offset_bottom = 646.0
+texture = ExtResource("1_2k0dn")
+
+[node name="Player" parent="." instance=ExtResource("2_nboim")]
+position = Vector2(432, 272)

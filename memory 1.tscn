@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://boqkkw1x44baq"]
+
+[ext_resource type="Texture2D" uid="uid://bm32a5848hrul" path="res://assets or images/studio apartment.png" id="1_4rddk"]
+
+[node name="memory 1 - root node" type="Node2D"]
+
+[node name="studio apartment" type="TextureRect" parent="."]
+offset_left = 243.0
+offset_right = 887.0
+offset_bottom = 644.0
+texture = ExtResource("1_4rddk")

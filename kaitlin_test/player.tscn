@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cj2aw5sr7fw7r"]
 
-[ext_resource type="Script" path="res://kaitlin_test/player.gd" id="1_tkl7r"]
+[ext_resource type="Script" uid="uid://bixr5o01iixwl" path="res://kaitlin_test/player.gd" id="1_tkl7r"]
 [ext_resource type="Texture2D" uid="uid://dl2cdjma3m477" path="res://kaitlin_test/personahh.png" id="2_i0ir8"]
 [ext_resource type="Texture2D" uid="uid://bcd82xve6736u" path="res://kaitlin_test/personahhh.png" id="3_kpkrv"]
 

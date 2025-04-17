@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://qq2mtw13lbp8"]
+
+[ext_resource type="Script" uid="uid://d0beyr82tjgkn" path="res://elaine - memory 1/player.gd" id="1_rk5wb"]
+[ext_resource type="Texture2D" uid="uid://dl2cdjma3m477" path="res://kaitlin_test/personahh.png" id="2_50evv"]
+[ext_resource type="Texture2D" uid="uid://bcd82xve6736u" path="res://kaitlin_test/personahhh.png" id="3_dksda"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vsfr"]
+size = Vector2(41, 88)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xukvg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_50evv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dksda")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_rk5wb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(38.5, 48)
+shape = SubResource("RectangleShape2D_4vsfr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(45, 43)
+scale = Vector2(1.76, 1.76)
+sprite_frames = SubResource("SpriteFrames_xukvg")
