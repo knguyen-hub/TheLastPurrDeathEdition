@@ -7,7 +7,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var player = get_node('../player')
+	pass
+	"""var player = get_node('../player')
 	
 	var player_coords = player.global_position
 	if global_position.distance_to(player_coords) < 100:
@@ -15,4 +16,4 @@ func _process(delta: float) -> void:
 			hide()
 		play('hover')
 	else:
-		play('default')
+		play('default')"""
