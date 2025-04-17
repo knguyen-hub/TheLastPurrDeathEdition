@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dww5qkw00u85"]
+[gd_scene load_steps=8 format=3 uid="uid://dww5qkw00u85"]
 
 [ext_resource type="Texture2D" uid="uid://b83i6bawe3uif" path="res://kaitlin_test/pokemonahhpaint.png" id="1_lrnik"]
 [ext_resource type="PackedScene" uid="uid://cj2aw5sr7fw7r" path="res://kaitlin_test/player.tscn" id="2_bstvq"]
+[ext_resource type="PackedScene" uid="uid://dabc4hjbgbl5g" path="res://kaitlin_test/catfood.tscn" id="3_xt28c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryfl4"]
 size = Vector2(561, 108)
@@ -61,3 +62,7 @@ shape = SubResource("RectangleShape2D_dw5rn")
 [node name="player" parent="." instance=ExtResource("2_bstvq")]
 position = Vector2(436, 267)
 scale = Vector2(4, 4)
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("3_xt28c")]
+position = Vector2(654, 183)
+scale = Vector2(0.3, 0.3)

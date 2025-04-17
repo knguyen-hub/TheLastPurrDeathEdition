@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dabc4hjbgbl5g"]
+
+[ext_resource type="Texture2D" uid="uid://dhtirpqpmsty6" path="res://kaitlin_test/catfood.png" id="1_0cgso"]
+[ext_resource type="Texture2D" uid="uid://bxb78plu0rpnn" path="res://kaitlin_test/catfood2.png" id="2_nb8v8"]
+[ext_resource type="Script" path="res://kaitlin_test/catfood.gd" id="3_8jt01"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dik0k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0cgso")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0cgso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nb8v8")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 1.5
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_dik0k")
+animation = &"hover"
+script = ExtResource("3_8jt01")
