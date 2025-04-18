@@ -1,9 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://dww5qkw00u85"]
+[gd_scene load_steps=18 format=3 uid="uid://dww5qkw00u85"]
 
 [ext_resource type="Script" path="res://kaitlin_test/test.gd" id="1_5rrwr"]
 [ext_resource type="Texture2D" uid="uid://bhn5imeqyrt6" path="res://kaitlin_test/studio_apartment.png" id="1_5ypii"]
 [ext_resource type="PackedScene" uid="uid://cj2aw5sr7fw7r" path="res://kaitlin_test/player.tscn" id="2_bstvq"]
 [ext_resource type="PackedScene" uid="uid://dabc4hjbgbl5g" path="res://kaitlin_test/catfood.tscn" id="3_xt28c"]
+[ext_resource type="PackedScene" uid="uid://cin45wa1r4oov" path="res://kaitlin_test/cat.tscn" id="4_xshm4"]
+[ext_resource type="Texture2D" uid="uid://e4k23hdsotcx" path="res://kaitlin_test/catlitter.jpg" id="5_b5pfh"]
+[ext_resource type="Texture2D" uid="uid://kd1jhxelayni" path="res://kaitlin_test/catlitter2.jpg" id="6_bunqd"]
+[ext_resource type="Script" path="res://kaitlin_test/litterbox.gd" id="7_bhaml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryfl4"]
 size = Vector2(1052.5, 108)
@@ -28,6 +32,28 @@ size = Vector2(186, 89)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4onl"]
 size = Vector2(88, 149)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yfxyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_b5pfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bunqd")
+}],
+"loop": true,
+"name": &"blinking",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_b5pfh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Test" type="Node2D"]
 script = ExtResource("1_5rrwr")
@@ -75,14 +101,6 @@ shape = SubResource("RectangleShape2D_wwe2v")
 position = Vector2(677, 309)
 shape = SubResource("RectangleShape2D_dw5rn")
 
-[node name="player" parent="." instance=ExtResource("2_bstvq")]
-position = Vector2(436, 267)
-scale = Vector2(4, 4)
-
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("3_xt28c")]
-position = Vector2(611, 323)
-scale = Vector2(0.3, 0.3)
-
 [node name="StaticBody2D7" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
@@ -100,3 +118,21 @@ shape = SubResource("RectangleShape2D_mw7yx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
 position = Vector2(741, 121)
 shape = SubResource("RectangleShape2D_x4onl")
+
+[node name="litterbox" type="AnimatedSprite2D" parent="."]
+position = Vector2(635, 586)
+scale = Vector2(0.18, 0.18)
+sprite_frames = SubResource("SpriteFrames_yfxyf")
+script = ExtResource("7_bhaml")
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("3_xt28c")]
+position = Vector2(611, 323)
+scale = Vector2(0.3, 0.3)
+
+[node name="cat" parent="." instance=ExtResource("4_xshm4")]
+position = Vector2(708, 371)
+scale = Vector2(3, 3)
+
+[node name="player" parent="." instance=ExtResource("2_bstvq")]
+position = Vector2(436, 267)
+scale = Vector2(4, 4)
