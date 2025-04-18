@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://5estac04wbnm"]
+
+[ext_resource type="Script" path="res://kaitlin_test/yarn_ball.gd" id="1_cf4y1"]
+[ext_resource type="Texture2D" uid="uid://whwa4ykepnry" path="res://kaitlin_test/yarn_0001.png" id="1_i8wn8"]
+[ext_resource type="Texture2D" uid="uid://cmmkxjwu6buxj" path="res://kaitlin_test/yarn_0002.png" id="2_p66f5"]
+[ext_resource type="Texture2D" uid="uid://bj80v7mf5lpol" path="res://kaitlin_test/yarn_0003.png" id="3_3n1gr"]
+[ext_resource type="Texture2D" uid="uid://pnke2g58tbc6" path="res://kaitlin_test/yarn_0004.png" id="4_6nqgk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rr4di"]
+radius = 7.42994
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5j133"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i8wn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p66f5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3n1gr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6nqgk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="yarn_ball" type="CharacterBody2D"]
+script = ExtResource("1_cf4y1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(7, 7)
+shape = SubResource("CircleShape2D_rr4di")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_5j133")
