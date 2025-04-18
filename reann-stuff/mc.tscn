@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://iejfjvrvpucl"]
+
+[ext_resource type="Script" path="res://reann-stuff/mc.gd" id="1_edie0"]
+[ext_resource type="Texture2D" uid="uid://b5vcio52n2fac" path="res://reann-stuff/mc_walk_movement_animation.png.png" id="2_r7nnh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uw2oa"]
+size = Vector2(15.2, 18.7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3pfv"]
+atlas = ExtResource("2_r7nnh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cck8c"]
+atlas = ExtResource("2_r7nnh")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iecj0"]
+atlas = ExtResource("2_r7nnh")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5hdi"]
+atlas = ExtResource("2_r7nnh")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3irt"]
+atlas = ExtResource("2_r7nnh")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq1s2"]
+atlas = ExtResource("2_r7nnh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uxqty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3pfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cck8c")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iecj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5hdi")
+}],
+"loop": true,
+"name": &"walk-left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3irt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq1s2")
+}],
+"loop": true,
+"name": &"walk-right",
+"speed": 3.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(52, 37)
+scale = Vector2(5, 5)
+script = ExtResource("1_edie0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.400002, 2.15)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_uw2oa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-0.600001, -4)
+sprite_frames = SubResource("SpriteFrames_uxqty")
+animation = &"idle"
+frame = 1
+frame_progress = 0.0650871
