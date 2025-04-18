@@ -78,8 +78,8 @@ shape = SubResource("RectangleShape2D_uw2oa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-0.400002, -4.2)
+position = Vector2(-0.600001, -4)
 sprite_frames = SubResource("SpriteFrames_uxqty")
-animation = &"walk-right"
+animation = &"idle"
 frame = 1
-frame_progress = 0.396483
+frame_progress = 0.0650871
