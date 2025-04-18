@@ -9,7 +9,7 @@ func _ready() -> void:
 	await get_tree().create_timer(6.0).timeout
 	var events : Array = []
 	var text_event = DialogicTextEvent.new()
-	text_event.text = "wow what a beautiful morning. i should check on prahas"
+	text_event.text = "wow what a beautiful morning! where is prahas? he's usually next to me when i wake up. i should check on him"
 	events.append(text_event)
 	var timeline : DialogicTimeline = DialogicTimeline.new()
 	timeline.events = events
@@ -50,11 +50,11 @@ func wait_for_first_message() -> void:
 	var this_event : Array = []
 	
 	var text_event = DialogicTextEvent.new()
-	text_event.text = "where is prahas?"
+	text_event.text = "where could he be?"
 	this_event.append(text_event)
 	
 	var text_event2 = DialogicTextEvent.new()
-	text_event2.text = 'maybe setting out his food will get him to come out.'
+	text_event2.text = 'usually setting out his food will get him to come out. i should do that now.'
 	this_event.append(text_event2)
 	
 	var timeline : DialogicTimeline = DialogicTimeline.new()
@@ -83,14 +83,14 @@ func _process(delta: float) -> void:
 				catfood_showing = false
 				var found_cat_food_event : Array = []
 				var text_event = DialogicTextEvent.new()
-				text_event.text = 'found the cat food, i will set it out.'
+				text_event.text = 'found the cat food! i can set it out now.'
 				found_cat_food_event.append(text_event)
 				var timeline : DialogicTimeline = DialogicTimeline.new()
 				timeline.events = found_cat_food_event
 				timeline.events_processed = true
 				Dialogic.start(timeline)
 				await get_tree().create_timer(6.0).timeout
-				show_dialogue2('hmm. no prahas still? where could he be?',
+				show_dialogue2('hmm. no prahas still? that is so strange. where could he be?',
 					'i should check the litter box.')
 			catfood.play('hover')
 		else:
@@ -103,7 +103,7 @@ func _process(delta: float) -> void:
 				litterbox_need = false
 				var litterbox_event : Array = []
 				var text_event = DialogicTextEvent.new()
-				text_event.text = 'hm. the litter box is empty. where could prahas be?'
+				text_event.text = 'hm. the litter box is empty. where else could prahas be?'
 				litterbox_event.append(text_event)
 				
 				var text_event2 = DialogicTextEvent.new()
