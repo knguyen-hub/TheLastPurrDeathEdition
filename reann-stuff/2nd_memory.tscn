@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://nijw8c413tx6"]
+[gd_scene load_steps=3 format=3 uid="uid://nijw8c413tx6"]
 
+[ext_resource type="Texture2D" uid="uid://c4g0u76aiq0j4" path="res://reann-stuff/studio_apartment.png" id="1_bc1ki"]
 [ext_resource type="PackedScene" uid="uid://iejfjvrvpucl" path="res://reann-stuff/mc.tscn" id="1_s1n6r"]
 
 [node name="2nd Memory" type="Node2D"]
 
+[node name="StudioApartment" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(298, 273.75)
+scale = Vector2(5.96, 5.505)
+texture = ExtResource("1_bc1ki")
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_s1n6r")]
-position = Vector2(92, 51)
+position = Vector2(150, 247)
