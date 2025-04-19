@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqf2x2kcad5ua"]
+
+[ext_resource type="PackedScene" uid="uid://cin45wa1r4oov" path="res://kaitlin_test/cat.tscn" id="1_811i8"]
+[ext_resource type="Script" path="res://kaitlin_test/yarn_scene.gd" id="1_ufssr"]
+[ext_resource type="PackedScene" uid="uid://5estac04wbnm" path="res://kaitlin_test/yarn_ball.tscn" id="2_vgw8g"]
+
+[node name="yarn_scene" type="Node2D"]
+script = ExtResource("1_ufssr")
+
+[node name="cat" parent="." instance=ExtResource("1_811i8")]
+position = Vector2(188, 281)
+scale = Vector2(7, 7)
+
+[node name="yarn_ball" parent="." instance=ExtResource("2_vgw8g")]
+position = Vector2(1119, 370)
+scale = Vector2(0.6, 0.6)

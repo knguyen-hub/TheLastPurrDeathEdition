@@ -1,62 +1,150 @@
-[gd_scene load_steps=7 format=3 uid="uid://dww5qkw00u85"]
+[gd_scene load_steps=19 format=3 uid="uid://dww5qkw00u85"]
 
-[ext_resource type="Texture2D" uid="uid://b83i6bawe3uif" path="res://kaitlin_test/pokemonahhpaint.png" id="1_lrnik"]
+[ext_resource type="Script" path="res://kaitlin_test/test.gd" id="1_5rrwr"]
+[ext_resource type="Texture2D" uid="uid://bhn5imeqyrt6" path="res://kaitlin_test/studio_apartment.png" id="1_5ypii"]
 [ext_resource type="PackedScene" uid="uid://cj2aw5sr7fw7r" path="res://kaitlin_test/player.tscn" id="2_bstvq"]
+[ext_resource type="Texture2D" uid="uid://dei7pxi4ryctg" path="res://kaitlin_test/litterbox2.png" id="3_7qj13"]
+[ext_resource type="PackedScene" uid="uid://dabc4hjbgbl5g" path="res://kaitlin_test/catfood.tscn" id="3_xt28c"]
+[ext_resource type="Texture2D" uid="uid://b7juyjt4c4vi2" path="res://kaitlin_test/litterbox1.png" id="4_njxrm"]
+[ext_resource type="PackedScene" uid="uid://cin45wa1r4oov" path="res://kaitlin_test/cat.tscn" id="4_xshm4"]
+[ext_resource type="Script" path="res://kaitlin_test/litterbox.gd" id="7_bhaml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryfl4"]
-size = Vector2(561, 108)
+size = Vector2(1052.5, 108)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecuxx"]
-size = Vector2(269, 458)
+size = Vector2(269, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axfnq"]
+size = Vector2(65.375, 143.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwe2v"]
-size = Vector2(936, 13)
+size = Vector2(1030, 60.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dw5rn"]
-size = Vector2(17, 282)
+size = Vector2(238, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qt16y"]
+size = Vector2(71.75, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mw7yx"]
+size = Vector2(186, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4onl"]
+size = Vector2(88, 149)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vntxo"]
+size = Vector2(14, 79)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yfxyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7qj13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_njxrm")
+}],
+"loop": true,
+"name": &"blinking",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7qj13")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Test" type="Node2D"]
+script = ExtResource("1_5rrwr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(626, 669)
-texture = ExtResource("1_lrnik")
+texture_filter = 1
+position = Vector2(505, 323)
+scale = Vector2(6.2, 6.2)
+texture = ExtResource("1_5ypii")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(547, -23)
+position = Vector2(522.75, -47)
 shape = SubResource("RectangleShape2D_ryfl4")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(148, 178)
+position = Vector2(61, 487)
 shape = SubResource("RectangleShape2D_ecuxx")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(962, 128)
-shape = SubResource("RectangleShape2D_ecuxx")
+position = Vector2(763.688, 449.125)
+shape = SubResource("RectangleShape2D_axfnq")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 position = Vector2(946, 226)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2(144.5, 219)
+position = Vector2(9, 197)
 shape = SubResource("RectangleShape2D_ecuxx")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
-position = Vector2(598, 602.5)
+position = Vector2(473, 666)
 shape = SubResource("RectangleShape2D_wwe2v")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
-position = Vector2(151, 508)
+position = Vector2(677, 309)
 shape = SubResource("RectangleShape2D_dw5rn")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2(235.125, 493)
+shape = SubResource("RectangleShape2D_qt16y")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2(292, 119)
+shape = SubResource("RectangleShape2D_mw7yx")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
+position = Vector2(741, 121)
+shape = SubResource("RectangleShape2D_x4onl")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
+position = Vector2(470, 295.5)
+shape = SubResource("RectangleShape2D_vntxo")
+
+[node name="litterbox" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(635, 558)
+scale = Vector2(6.2, 6.2)
+sprite_frames = SubResource("SpriteFrames_yfxyf")
+animation = &"blinking"
+frame = 1
+frame_progress = 0.582501
+script = ExtResource("7_bhaml")
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("3_xt28c")]
+position = Vector2(611, 323)
+frame_progress = 0.99715
+
+[node name="cat" parent="." instance=ExtResource("4_xshm4")]
+position = Vector2(708, 371)
+scale = Vector2(3, 3)
 
 [node name="player" parent="." instance=ExtResource("2_bstvq")]
 position = Vector2(436, 267)
