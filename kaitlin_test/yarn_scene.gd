@@ -15,15 +15,17 @@ func _process(delta: float) -> void:
 	if playing:
 		# deal with the yarn ball stuff
 		var yarn = get_node('yarn_ball')
+		var animator = get_node("cat/AnimatedSprite2D")
 		if (!yarn.is_good()):
 			yarn.play_default_anim()
+			animator.play('default')
 			show_lose_dialogue()
 			playing = false
 		
 		#deal with the cat stuff
 		var cat = get_node('cat')
 		cat.frame_jump()
-		var animator = get_node("cat/AnimatedSprite2D")
+		
 		if animator.get_frame() == 12:
 			animator.play('default')
 		elif Input.is_action_just_pressed("ui_select") and (animator.animation == "default" or animator.get_frame() >= 7) and yarn.is_good():
