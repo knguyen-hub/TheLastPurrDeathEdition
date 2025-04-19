@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var counter =0
-var speed = 300.0
+var speed = 400.0
 var good = true
 
 func play_default_anim() -> void:

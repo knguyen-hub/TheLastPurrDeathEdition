@@ -147,5 +147,5 @@ position = Vector2(708, 371)
 scale = Vector2(3, 3)
 
 [node name="player" parent="." instance=ExtResource("2_bstvq")]
-position = Vector2(436, 267)
-scale = Vector2(4, 4)
+position = Vector2(286, 298)
+scale = Vector2(6.2, 6.2)
