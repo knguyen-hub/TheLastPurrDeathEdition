@@ -36,7 +36,12 @@ func _process(delta: float) -> void:
 func show_lose_dialogue() -> void:
 	show_dialogue('you lost!')
 	
+
+func _on_timeline_ended() -> void:
+	get_tree().change_scene_to_file('res://kaitlin_test/after_yarn.tscn')
+
 func show_dialogue(dialogue : String) -> void:
+	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	var events : Array = []
 	var text_event = DialogicTextEvent.new()
 	text_event.text = dialogue

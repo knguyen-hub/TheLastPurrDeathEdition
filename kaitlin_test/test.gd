@@ -6,10 +6,11 @@ var find_cat = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	await get_tree().create_timer(6.0).timeout
 	var events : Array = []
 	var text_event = DialogicTextEvent.new()
-	text_event.text = "wow what a beautiful morning! where is prahas? he's usually next to me when i wake up. i should check on him"
+	text_event.text = "wow what a beautiful morning! where is biscuit? he's usually next to me when i wake up. i should check on him"
 	events.append(text_event)
 	var timeline : DialogicTimeline = DialogicTimeline.new()
 	timeline.events = events
@@ -17,6 +18,7 @@ func _ready() -> void:
 	timeline.events_processed = true
 	Dialogic.start(timeline)
 	wait_for_first_message()
+
 
 func show_dialogue(dialogue : String) -> void:
 	var events : Array = []
@@ -90,7 +92,7 @@ func _process(delta: float) -> void:
 				timeline.events_processed = true
 				Dialogic.start(timeline)
 				await get_tree().create_timer(6.0).timeout
-				show_dialogue2('hmm. no prahas still? that is so strange. where could he be?',
+				show_dialogue2('hmm. no biscuit still? that is so strange. where could he be?',
 					'i should check the litter box.')
 			catfood.play('hover')
 		else:
@@ -103,7 +105,7 @@ func _process(delta: float) -> void:
 				litterbox_need = false
 				var litterbox_event : Array = []
 				var text_event = DialogicTextEvent.new()
-				text_event.text = 'hm. the litter box is empty. where else could prahas be?'
+				text_event.text = 'hm. the litter box is empty. where else could biscuit be?'
 				litterbox_event.append(text_event)
 				
 				var text_event2 = DialogicTextEvent.new()
@@ -119,15 +121,20 @@ func _process(delta: float) -> void:
 		else:
 			litterbox.play('default')
 	elif find_cat:
+		
 		var cat = get_node("cat")
 		var cat_coords = cat.global_position
 		if player_coords.distance_to(cat_coords) < 100:
+			
 			var cat_anim = get_node('cat/AnimatedSprite2D')
 			find_cat = false
 			cat_anim.show()
-			show_dialogue2('there you are prahas! i was getting worried',
-				"come on prahas i put out breakfast for you!")
+			show_dialogue2('there you are biscuit! i was getting worried',
+				"come on biscuits i put out breakfast for you!")
 			await get_tree().create_timer(5.0).timeout
-			show_dialogue2("why aren't you moving? prahas get up!", 
-				"prahas??")
+			Dialogic.timeline_ended.connect(_on_timeline_ended)
+			show_dialogue2("why aren't you moving? biscuit get up!", 
+				"biscuit??")
 			
+func _on_timeline_ended() -> void:
+	get_tree().change_scene_to_file('res://kaitlin_test/story_part.tscn')
